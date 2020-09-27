@@ -275,7 +275,7 @@ import WelcomeNavBar from "@/components/WelcomeNavBar.vue";
     WelcomeNavBar,
   }
 })
-export default class MyApplication extends Vue {
+export default class Application extends Vue {
   public sectionName = "";
 
   private getInstructions(section: string) {

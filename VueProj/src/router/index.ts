@@ -28,11 +28,6 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "about" */ "../views/Application/Application.vue"),
     children: [  
       {
-        path: "", 
-        name: "application.default", 
-        redirect: { name: "Instructions" }
-      },     
-      {
         path: "instructions", 
         name: "application.Instructions", 
         component: () =>
