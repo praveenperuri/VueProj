@@ -1,6 +1,6 @@
 <template>
     <div>
-                <div class="container">
+      <div class="container">
           <div class="row">
             <div class="col-sm-6">
               <h5 class="header-black">EARLY LEARNING CENTER INFORMATION</h5>
@@ -150,6 +150,6 @@
     </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Vue } from "vue-property-decorator";
 export default class Facility extends Vue {}
 </script>

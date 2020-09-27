@@ -255,7 +255,7 @@
               </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9">
-              <router-view></router-view>
+              <router-view :key="$route.path"></router-view>
             </div>
           </div>
         </div>
@@ -272,10 +272,10 @@ import WelcomeNavBar from "@/components/WelcomeNavBar.vue";
 @Component({
   components: {
     //ApplicationContainer
-    WelcomeNavBar
+    WelcomeNavBar,
   }
 })
-export default class Application extends Vue {
+export default class MyApplication extends Vue {
   public sectionName = "";
 
   private getInstructions(section: string) {

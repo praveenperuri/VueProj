@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container-fluid ">
-    <router-view></router-view>
+    <router-view :key="$route.path"></router-view>
     <div class="row-cols-sm-1 m-sm-1">
       <!-- back to top -->
       <a id="ScrollToTop" href="#" class="btn btn-accent" title="Scroll to Top">

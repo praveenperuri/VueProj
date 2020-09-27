@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Welcome from "../views/Welcome.vue";
 import About from "../views/About.vue";
-import Application from "../views/Application/Application.vue";
+import MyApplication from "../views/Application/Application.vue";
 import Instructions from "../views/Application/Instructions.vue";
 import FundingSource from "../views/Application/FundingSource.vue";
 import Facility from "../views/Application/Facility.vue";
@@ -24,28 +24,31 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/application",
-    //name: "NewApplication",
-    component: Application,
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Application/Application.vue"),
     children: [  
       {
         path: "", 
-        name: "application", 
+        name: "application.default", 
         redirect: { name: "Instructions" }
       },     
       {
         path: "instructions", 
-        name: "Instructions", 
-        component: Instructions
+        name: "application.Instructions", 
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Application/Instructions.vue"),
       }, 
       {
-        path: "funding", 
-        name: "Funding", 
-        component: FundingSource
-      },      
-      {
         path: "facility", 
-        name: "Facility", 
-        component: Facility
+        name: "application.facility", 
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Application/Facility.vue"),
+      },
+      {
+        path: "funding", 
+        name: "application.Funding", 
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Application/FundingSource.vue"),
       }
     ]
   },
